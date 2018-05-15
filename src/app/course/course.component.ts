@@ -22,6 +22,7 @@ import { CoursesService } from 'src/app/courses.service';
   </table>
   `
 })
+
 export class CourseComponent implements OnInit {
 
 
