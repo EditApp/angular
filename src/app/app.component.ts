@@ -11,4 +11,7 @@ export class AppComponent {
     title: 'Angularrr app ded',
     isFavourite: true
   }
+  onFavouriteChanged(isFavourite) {
+    console.log('favourite is changed', isFavourite);
+  }
 }
