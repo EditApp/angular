@@ -15,6 +15,7 @@ import { AuthorService } from 'src/app/authors.service';
   </ul>
   `
 })
+
 export class AuthorsComponent implements OnInit {
   title = "List of Authirs";
   constructor() {
