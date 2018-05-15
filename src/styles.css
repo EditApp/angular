@@ -4,3 +4,9 @@
 body {
     padding: 20px;
 }
+
+.glyphicon {
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 40px;
+}
