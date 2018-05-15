@@ -20,7 +20,6 @@ export class AuthorsComponent implements OnInit {
   title = "List of Authirs";
   constructor() {
     let service = new AuthorService();
-    this.authors = service.getAuthors();
    }
 
   ngOnInit() {
