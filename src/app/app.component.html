@@ -1,11 +1,57 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+
+    <h1>
+        List of courses again !
+    </h1>
+    <ul>
+      <!--<li *ngFor="let course of courses; index as i">-->
+      <li *ngFor="let course of courses; even as isEven">
+        - {{ course.name }} <span *ngIf="isEven">(EVEN)</span>
+      </li>
+    </ul>
+
+    <h1>
+        Switch case exercice !
+    </h1> 
+
+    <ul class="nav nav-pills">
+      <li [class.active]="viewMode == 'map'"><a (click)="viewMode = 'map'" href="">Map view</a></li>
+      <li [class.active]="viewMode == 'list'"><a (click)="viewMode = 'list'" href="">List view</a></li>
+    </ul>
+    <div [ngSwitch]="viewMode">
+        <div *ngSwitchCase="'map'">Map view content</div>
+        <div *ngSwitchCase="'list'">List view content</div>
+        <div *ngSwitchDefault>Otherwise</div>
+    
+    </div>
+    
+
   <h1>
-    Welcome to Angular {{ title }}!
+    List of Courses exercice !
   </h1>
+  <div *ngIf="courses.length > 0; then coursesList else noCourses">
+    List of courses
+  </div>
+  <ng-template #coursesList>
+     List of courses 
+  </ng-template>
+  <ng-template #noCourses>
+    No courses yet
+  </ng-template>
+
+  <like
+    [likesCount]="tweet.likesCount"
+    [isActive]="tweet.likesCount"
+  ></like>
+  <bootstrap-panel >
+    <ng-container class="heading">Heading</ng-container>
+    <ng-container class="body">Body</ng-container>
+  </bootstrap-panel>
   <favorite [isFavourite]="post.isFavourite" (change)="onFavouriteChanged($event)"></favorite>
 
   <courses></courses>
+  
   <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
 <h2>Here are some links to help you start: </h2>
